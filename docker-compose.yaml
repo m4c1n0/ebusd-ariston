@@ -128,7 +128,7 @@ services:
       # Only write log for matching AREA(S): main|network|bus|device|update|other|all
       EBUSD_LOGAREAS: "all"
       # Only write log up to LEVEL: error|notice|info|debug
-      EBUSD_LOGLEVEL: "notice"
+      EBUSD_LOGLEVEL: "debug"
 
       # Raw logging options:
 
