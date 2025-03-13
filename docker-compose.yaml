@@ -108,7 +108,7 @@ services:
       # PID file name (only for daemon)
       #EBUSD_PIDFILE: "/var/run/ebusd.pid"
       # Listen for command line connections on PORT
-      #EBUSD_PORT: 8888
+      EBUSD_PORT: 8888
       # Listen for command line connections on 127.0.0.1 interface only
       #EBUSD_LOCALHOST: ""
       # Listen for HTTP connections on PORT, 0 to disable
