@@ -57,7 +57,7 @@ services:
 
       # Read CSV config files from PATH (local folder or HTTPS URL)
       #EBUSD_CONFIGPATH: "/path/to/local/configs"
-      EBUSD_CONFIGPATH: "https://ha.stp.hmcs.sk/local/ebusd/ariston.csv"
+      EBUSD_CONFIGPATH: "/etc/ebusd/"
       # Pick CSV config files matching initial scan.
       # - empty for broadcast ident message (default when EBUSD_CONFIGPATH is not given),
       # - "none" for no initial scan message,
@@ -210,7 +210,7 @@ services:
       # Add variable(s) to the read KNX integration settings
       #EBUSD_KNXVAR: "address=1.1.1"
     volumes:
-       - /mnt/storage/docker/ebusd/config:/etc/ebusd/
+       - /mnt/storage/docker/ebusd:/etc/ebusd/
 #============================================================
 
 
