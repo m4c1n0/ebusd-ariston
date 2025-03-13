@@ -153,7 +153,7 @@ services:
       # MQTT options:
 
       # Connect to MQTT broker on HOST
-      EBUSD_MQTTHOST: "mqtt.skb.hmcs.sk"
+      EBUSD_MQTTHOST: "mqtt.stp.hmcs.sk"
       # Connect to MQTT broker on PORT (usually 1883), 0 to disable
       EBUSD_MQTTPORT: 1883
       # Set client ID for connection to MQTT broker
