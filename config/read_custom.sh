@@ -3,78 +3,78 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 touch /tmp/last_ebus_readall.txt
 
 
+# NOT PROVIDING ANY USABLE VALUE
+# docker exec ebusd ebusctl read -m 0 -c boiler boiler_circulation_cycles && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler boiler_fan_cycles && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler boiler_life_time && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler boiler_pressure && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler boiler_type && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler circulation_time && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler config_changes && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler dhw_max_power_pct && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler diverter_cycles && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler flame_active && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler flame_power && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler heat_max_adj_power_pct && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler heat_max_power_pct && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler heat_min_power_pct && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler heat_post_circulation && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler hours_burner_on && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler ignition_cycles && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler ignition_delay && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler ignition_delay_type && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler nominal_power && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler pressure_monitoring_device && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler pump_max_pwm && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler pump_min_pwm && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler pump_operation && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler slow_ignition_power_pct && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c boiler warning_pressure && sleep 5
+
+
+
+
 #RETEST
-docker exec ebusd ebusctl read -m 0 -c boiler boiler_circulation_cycles && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler boiler_fan_cycles && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler boiler_life_time && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler boiler_pressure && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler boiler_type && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler circulation_time && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler config_changes && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler dhw_max_power_pct && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler diverter_cycles && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler flame_active && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler flame_power && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler heat_max_adj_power_pct && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler heat_max_power_pct && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler heat_min_power_pct && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler heat_post_circulation && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler hours_burner_on && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler ignition_cycles && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler ignition_delay && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler ignition_delay_type && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler nominal_power && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler pressure_monitoring_device && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler pump_max_pwm && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler pump_min_pwm && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler pump_operation && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler slow_ignition_power_pct && sleep 5
-docker exec ebusd ebusctl read -m 0 -c boiler warning_pressure && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr antifreeze_temp && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr aux_1_afr && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr aux_1_mean && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr aux_2_afr_mean && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr aux_2_pump && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr cool_anticycle_time && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr config_version_counter && sleep 5
+docker exec ebusd ebusctl read -m 0 -c heatpump heat_ext_temp_offset && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr cooling_active && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr boiler_3way_valve && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr dhw_pv_delta_t_setp && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr dhw_store_temp && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr electric_cost && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux1_input && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux1_out && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux2_out && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_1_status && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_2_status && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_3_status && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr ext_boiler_dhw_efficiency && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr ext_boiler_heat_efficiency && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr ext_temp_offset && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr gas_cost && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_energy_ratio && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_max_cost_ratio && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_min_cost_ratio && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr heat_mode && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr heating_mode && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_1_mean && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_2_mean && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_3_mean && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_logic && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_mode && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_status && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr hydraulic_scheme && sleep 5
 
 
-
-
-
-# docker exec ebusd ebusctl read -m 0 -c energymgr antifreeze_temp && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr aux_1_afr && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr aux_1_mean && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr aux_2_afr_mean && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr aux_2_pump && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr cool_anticycle_time && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr config_version_counter && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heat_ext_temp_offset && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr cooling_active && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr boiler_3way_valve && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr dhw_pv_delta_t_setp && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr dhw_store_temp && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr electric_cost && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux1_input && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux1_out && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_aux2_out && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_1_status && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_2_status && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr energymgr_hv_inv_3_status && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr ext_boiler_dhw_efficiency && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr ext_boiler_heat_efficiency && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr ext_temp_offset && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr gas_cost && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_energy_ratio && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_max_cost_ratio && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr gas_electric_min_cost_ratio && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr heat_mode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr heating_mode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_1_mean && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_2_mean && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hv_inv_3_mean && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_logic && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_mode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hybrid_status && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr hydraulic_scheme && sleep 5
-
-
-# docker exec ebusd ebusctl read -m 0 -c energymgr protech_anode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr pump_antiblock && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr pv_electric_cost && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr protech_anode && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr pump_antiblock && sleep 5
+docker exec ebusd ebusctl read -m 0 -c energymgr pv_electric_cost && sleep 5
 
 
 
