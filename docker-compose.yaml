@@ -121,23 +121,23 @@ services:
       # Log options:
 
       # Write log to FILE (only for daemon, empty string for using syslog)
-      #EBUSD_LOGFILE: "/var/log/ebusd.log"
+      EBUSD_LOGFILE: "/var/log/ebusd.log"
       # Only write log for matching AREA(S) up to LEVEL (alternative to EBUSD_LOGAREAS/EBUSD_LOGLEVEL, may be used
       # multiple times)
-      #EBUSD_LOG: "all:notice"
+      EBUSD_LOG: "all:notice"
       # Only write log for matching AREA(S): main|network|bus|device|update|other|all
-      #EBUSD_LOGAREAS: "all"
+      EBUSD_LOGAREAS: "all"
       # Only write log up to LEVEL: error|notice|info|debug
-      #EBUSD_LOGLEVEL: "notice"
+      EBUSD_LOGLEVEL: "notice"
 
       # Raw logging options:
 
       # Log messages or all received/sent bytes on the bus
-      #EBUSD_LOGRAWDATA: ""
+      EBUSD_LOGRAWDATA: ""
       # Write raw log to FILE
-      #EBUSD_LOGRAWDATAFILE: "/var/log/ebusd.log"
+      EBUSD_LOGRAWDATAFILE: "/var/log/ebusd.log"
       # Make raw log file no larger than SIZE kB
-      #EBUSD_LOGRAWDATASIZE: 100
+      EBUSD_LOGRAWDATASIZE: 1024
 
       # Binary dump options:
 
@@ -209,6 +209,8 @@ services:
       #EBUSD_KNXINT: "/etc/ebusd/knx.cfg"
       # Add variable(s) to the read KNX integration settings
       #EBUSD_KNXVAR: "address=1.1.1"
+    volumes:
+       - /mnt/storage/docker/ebusd/config:/etc/ebusd/
 #============================================================
 
 
