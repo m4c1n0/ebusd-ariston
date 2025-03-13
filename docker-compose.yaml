@@ -111,7 +111,7 @@ services:
       # Listen for command line connections on 127.0.0.1 interface only
       #EBUSD_LOCALHOST: ""
       # Listen for HTTP connections on PORT, 0 to disable
-      #EBUSD_HTTPPORT: 8080
+      EBUSD_HTTPPORT: 8080
       # Path for HTML files served by HTTP port
       #EBUSD_HTMLPATH: "/var/ebusd/html"
       # Set automatic update check to MODE (on|off)
