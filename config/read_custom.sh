@@ -73,75 +73,103 @@ touch /tmp/last_ebus_readall.txt
 # docker exec ebusd ebusctl read -m 0 -c energymgr pump_antiblock && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c energymgr pv_electric_cost && sleep 5
 
-
-#RETEST
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_offset && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_setpoint_temp_set && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_slope && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_temp_range && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_therm_type_selection && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_water_max_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_water_min_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_day_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_offset && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_request_mode && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_room_temp_infl && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_setpoint_temp_check && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_slope && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_temp_range && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_therm_type_selection && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_water_max_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_water_min_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_night_temp && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_auto_switch && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_switch_delay_time && sleep 5
-docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_temp_thresh && sleep 5
-
-
-
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_activation_state && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_ntp && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_sw_update && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_wifi && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_wifi_signal && sleep 5
 # docker exec ebusd ebusctl read -m 0 -c gateway gateway_wifi_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump boost_time && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump config_version_counter && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump cool_ext_temp_offset && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_3way_valve_dhw_heat && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_3way_valve_heat_cool && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_4way_valve_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_anode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_base_pane_heater_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_comp_discharge_temp && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compr_current && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compr_modulation && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compressor_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_cond_pressure && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_electric_heater && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_evap_pressure && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_evaporator_temp && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_exp_valve && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_ext_pump && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan1_speed && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan1_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan2_speed && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan2_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_flow_switch && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_info && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_inverter_nominal_power && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_last_error && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_main_pump && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_power_consumption && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_preheater_state && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_safety_thermostat && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_shutoff_protection && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump pump_max_pwm && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump pump_min_pwm && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump pump_operation && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c heatpump silent_mode && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr heatpump_calculated_cost && sleep 5
-# docker exec ebusd ebusctl read -m 0 -c energymgr boiler_calculated_cost && sleep 5
+
+
+
+
+
+#NOT WORKING AT ALL
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_offset && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_setpoint_temp_set && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_slope && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_temp_range && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_therm_type_selection && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_water_max_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_cool_water_min_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_day_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_offset && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_request_mode && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_room_temp_infl && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_setpoint_temp_check && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_slope && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_temp_range && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_therm_type_selection && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_water_max_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_heat_water_min_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_night_temp && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_auto_switch && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_switch_delay_time && sleep 5
+# docker exec ebusd ebusctl read -m 0 -c energymgr z1_summer_winter_temp_thresh && sleep 5
+
+
+
+#RETEST
+ docker exec ebusd ebusctl read -m 0 -c heatpump boost_time && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump config_version_counter && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump cool_ext_temp_offset && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_3way_valve_dhw_heat && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_3way_valve_heat_cool && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_4way_valve_state && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_anode && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_base_pane_heater_state && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_comp_discharge_temp && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compr_current && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compr_modulation && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_compressor_state && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_cond_pressure && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_electric_heater && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_evap_pressure && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_evaporator_temp && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_exp_valve && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_ext_pump && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan1_speed && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan1_state && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan2_speed && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_fan2_state && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_flow_switch && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_info && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_inverter_nominal_power && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_last_error && sleep 5
+ 
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_main_pump && sleep 5
+ 
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_power_consumption && sleep 5
+
+
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_preheater_state && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_safety_thermostat && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump heatpump_shutoff_protection && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump pump_max_pwm && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump pump_min_pwm && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump pump_operation && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c heatpump silent_mode && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c energymgr heatpump_calculated_cost && sleep 5
+ docker exec ebusd ebusctl read -m 0 -c energymgr boiler_calculated_cost && sleep 5
 
 
 
