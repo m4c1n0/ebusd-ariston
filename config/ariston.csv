@@ -45,7 +45,7 @@ b,broadcast,bus_control,Bus Control,,fe,2038,,ign,,IGN:5
 # 7f QQ, fe ZZ, 2031 PBSB, NO COMMAND CODE, 10 LEN, XXXXXXX...XXXXXXX 16 Hex bytes for serial (grab the first 12)  
 # NOT confirmed, the messages are sparse on the bus and it seems impossible to request the data with direct ask command
 b,broadcast,hp_serial_number,HPSerial,13,fe,2031,,value,,STR:12
-b,broadcast,boiler_serial_number,BoilerSerial,37,fe,2031,,value,,STR:12
+#b,broadcast,boiler_serial_number,BoilerSerial,37,fe,2031,,value,,STR:12
 b,broadcast,gw_serial_number,GWSerial,70,fe,2031,,value,,STR:12
 b,broadcast,sensys_serial_number,SystemSerial,7f,fe,2031,,value,,STR:12
 
@@ -53,7 +53,7 @@ b,broadcast,sensys_serial_number,SystemSerial,7f,fe,2031,,value,,STR:12
 # 2002 PBSB with 000000 command seems to be used for gathering devices FW version, NOT CONFIRMED, only the remote command is 
 # verified (by accident??)
 r,sensys,remote_command_sw_version,RC-SW-Ver,,75,2002,000000,ign,s,IGN:3,,,,value,s,HEX:3
-r,sensys,boiler_sw_version,Boiler-SW-Ver,,3c,2002,000000,ign,s,IGN:1,,,,value,s,HEX:3
+#r,sensys,boiler_sw_version,Boiler-SW-Ver,,3c,2002,000000,ign,s,IGN:1,,,,value,s,HEX:3
 r,sensys,energymgr_sw_version,Boiler-SW-Ver,,18,2002,000000,ign,s,IGN:1,,,,value,s,HEX:14
 r,sensys,heatpump_sw_version,Boiler-SW-Ver,,1e,2002,000000,ign,s,IGN:1,,,,value,s,HEX:14
 r,sensys,Address_23_sw_version,Boiler-SW-Ver,,23,2002,000000,ign,s,IGN:1,,,,value,s,HEX:14
@@ -81,58 +81,58 @@ b,energymgr,error,HP Casted Error,,fe,2004,,,m,error_code,
 ############################################################################################
 
 #Boiler direct ask
-r,boiler,boiler_pressure,Boiler circuit pressure,,3c,2000,7547,ign,s,IGN,,,,boiler_pressure,,UCH,10,bar
-# LWT_temp read by other broadcasted message, commenting this line to avoid ebusd error for duplicate ID
-# r,boiler,LWT_temp,heating temperature,,3c,2000,6810,ign,s,IGN:1,,,,,,SIN,10,°C
-r,boiler,EWT_temp,heating return temperature,,3c,2000,6910,ign,s,IGN:1,,,,,,SIN,10,°C
-r,boiler,diverter_cycles,Number of diverter valve cycles,,3c,2000,40d2,ign,s,IGN:1,,,,,,UIN
-r,boiler,ignition_cycles,Number of ignition cycles,,3c,2000,42d8,ign,s,IGN:1,,,,,,UIN
-r,boiler,circulation_time,circulation time,,3c,2000,44aF,ign,s,IGN:1,,,,,,UIN,,min
-r,boiler,boiler_life_time,Boiler Life Time,,3c,2000,50d9,ign,s,IGN:1,,,,,,UIN,,min
-r,boiler,boiler_circulation_cycles,Number of circulation cycles,,3c,2000,44d2,ign,s,IGN:1,,,,,,UIN
-r,boiler,boiler_fan_cycles,Number of fan cycles,,3c,2000,4CD2,ign,s,IGN:1,,,,,,UIN
-r,boiler,hours_burner_on_CH,Hours Burner On CH,,3c,2000,4bd1,ign,s,IGN:1,,,,,,UIN,,hours
-r,boiler,hours_burner_on_DHW,Hours Burner On DHW,,3c,2000,4cd1,ign,s,IGN:1,,,,,,UIN,,hours
-r,boiler,flame_active,Flame active,,3c,2000,0e11,ign,s,IGN:1,,,,,s,onoff
-r,boiler,flame_power_kw,Boiler Flame Power KW,,3c,2000,6847,,s,IGN:1,,,,,,UIN,10,kW
-r,boiler,diverter_valve,Boiler Diverter Valve,,3c,2000,c012,ign,s,IGN:1,,,,,,BCD,0=dhw;1=heating
-r,boiler,hours_pump_on,Pump Hours On,,3c,2000,42d2,ign,s,IGN:1,,,,,,UIN,,hours
-r,boiler,flame_lift_offs,Flame Lift Offs,,3c,2000,46d1,ign,s,IGN:1,,,,,,UIN,
+#r,boiler,boiler_pressure,Boiler circuit pressure,,3c,2000,7547,ign,s,IGN,,,,boiler_pressure,,UCH,10,bar
+## LWT_temp read by other broadcasted message, commenting this line to avoid ebusd error for duplicate ID
+## r,boiler,LWT_temp,heating temperature,,3c,2000,6810,ign,s,IGN:1,,,,,,SIN,10,°C
+#r,boiler,EWT_temp,heating return temperature,,3c,2000,6910,ign,s,IGN:1,,,,,,SIN,10,°C
+#r,boiler,diverter_cycles,Number of diverter valve cycles,,3c,2000,40d2,ign,s,IGN:1,,,,,,UIN
+#r,boiler,ignition_cycles,Number of ignition cycles,,3c,2000,42d8,ign,s,IGN:1,,,,,,UIN
+#r,boiler,circulation_time,circulation time,,3c,2000,44aF,ign,s,IGN:1,,,,,,UIN,,min
+#r,boiler,boiler_life_time,Boiler Life Time,,3c,2000,50d9,ign,s,IGN:1,,,,,,UIN,,min
+#r,boiler,boiler_circulation_cycles,Number of circulation cycles,,3c,2000,44d2,ign,s,IGN:1,,,,,,UIN
+#r,boiler,boiler_fan_cycles,Number of fan cycles,,3c,2000,4CD2,ign,s,IGN:1,,,,,,UIN
+#r,boiler,hours_burner_on_CH,Hours Burner On CH,,3c,2000,4bd1,ign,s,IGN:1,,,,,,UIN,,hours
+#r,boiler,hours_burner_on_DHW,Hours Burner On DHW,,3c,2000,4cd1,ign,s,IGN:1,,,,,,UIN,,hours
+#r,boiler,flame_active,Flame active,,3c,2000,0e11,ign,s,IGN:1,,,,,s,onoff
+#r,boiler,flame_power_kw,Boiler Flame Power KW,,3c,2000,6847,,s,IGN:1,,,,,,UIN,10,kW
+#r,boiler,diverter_valve,Boiler Diverter Valve,,3c,2000,c012,ign,s,IGN:1,,,,,,BCD,0=dhw;1=heating
+#r,boiler,hours_pump_on,Pump Hours On,,3c,2000,42d2,ign,s,IGN:1,,,,,,UIN,,hours
+#r,boiler,flame_lift_offs,Flame Lift Offs,,3c,2000,46d1,ign,s,IGN:1,,,,,,UIN,
 #r,boiler,heat_request_avg_duration,Heat Request Average Duration,,3c,2000,42d2,ign,s,IGN:1,,,,,,UIN,,hours
-r,boiler,pump_current_modulation,Pump Current Modulation,,3c,2000,c300,ign,s,IGN:1,,,,,,UIN,,pct
-r,boiler,boiler_current_modulation,Boiler Current Gas Modulation,,3c,2000,c404,ign,s,IGN:1,,,,,,UCH
+#r,boiler,pump_current_modulation,Pump Current Modulation,,3c,2000,c300,ign,s,IGN:1,,,,,,UIN,,pct
+r#,boiler,boiler_current_modulation,Boiler Current Gas Modulation,,3c,2000,c404,ign,s,IGN:1,,,,,,UCH
 
 
 
 #Boiler Broadcasted messages
-b,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,,UCH,1=standby;2=heating;3=heating hot water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame
-r,boiler,boiler_status,Boiler Status,,3c,2000,c04b,ign,s,IGN:1,,,,boilerstatus,s,UCH,1=standby;2=heating;3=heating hot water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame
-r,boiler,dhw_max_power_pct,DHW Bolier Max Power PCT,,3c,2000,6229,ign,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,heat_max_power_pct,Heating Bolier Max Power PCT,,3c,2000,6329,ign,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,heat_min_power_pct,Heating Bolier Min Power PCT,,3c,2000,6429,ign,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,slow_ignition_power_pct,Slow Ignition Power PCT,,3c,2000,6529,ign,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,heat_max_adj_power_pct,Heating Bolier Max Adjustable Power PCT,,3c,2000,6629,ign,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,pump_max_pwm,Pump Max PWM,,3c,2000,c928,,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,pump_min_pwm,Pump Min PWM,,3c,2000,ca28,,s,IGN:1,,,,,s,UCH,,pct
-r,boiler,pressure_monitoring_device,Pressure Monitoring Device,,3c,2000,c328,ign,s,IGN:1,,,,,s,UCH,0=temp_probe;1=pressure_switch;2=pressure_sensor
-r,boiler,warning_pressure,Water Warning Pressure,,3c,2000,c12a,ign,s,IGN:1,,,,,s,UCH,10,bar
-r,boiler,ignition_delay,Ignition Delay,,3c,2000,c027,ign,s,IGN:1,,,,,s,UCH,,min
-r,boiler,pump_operation,Pump Operation,,3c,2000,c228,ign,s,IGN:1,,,,,s,UCH,0=low_speed;1=high_speed;2=modulating
-r,boiler,heat_post_circulation,Heating Post Circulation,,3c,2000,c227,ign,s,IGN:1,,,,,s,UCH,,min
-r,boiler,ignition_delay_type,Ignition Delay Type,,3c,2000,1320,ign,s,IGN:1,,,,,s,UCH,0=manual;1=automatic
-r,boiler,nominal_power,Nominal Power,,3c,2000,6829,ign,s,IGN:1,,,,,s,UCH,,kW
-r,boiler,boiler_type,Boiler Type,,3c,2000,c428,ign,s,IGN:1,,,,,s,UCH,0=mixed_instant;1=ext_tank_ntc;2=ext_tank_thermostat;3=micro_storage;4=stratification_storage;6=storage
-r,boiler,hybrid_integration,Hybrid Integration,,3c,2000,0420,ign,s,IGN:1,,,,,s,onoff
-r,boiler,fan_speed,Boiler Fan Speed,,3c,2000,4013,,s,IGN:1,,,,,,UIN,,rpm
+#b,boiler,boiler_status,Boiler Status,,fe,2010,c04b,boilerstatus,,UCH,1=standby;2=heating;3=heating hot water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame
+#r,boiler,boiler_status,Boiler Status,,3c,2000,c04b,ign,s,IGN:1,,,,boilerstatus,s,UCH,1=standby;2=heating;3=heating hot water;4=water tank;5=circulating;23=manual test;24=comfort;31=gas_circuit_deaeration;36=auto_calibration;51=low_water_pressure;52=no_flame
+#r,boiler,dhw_max_power_pct,DHW Bolier Max Power PCT,,3c,2000,6229,ign,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,heat_max_power_pct,Heating Bolier Max Power PCT,,3c,2000,6329,ign,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,heat_min_power_pct,Heating Bolier Min Power PCT,,3c,2000,6429,ign,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,slow_ignition_power_pct,Slow Ignition Power PCT,,3c,2000,6529,ign,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,heat_max_adj_power_pct,Heating Bolier Max Adjustable Power PCT,,3c,2000,6629,ign,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,pump_max_pwm,Pump Max PWM,,3c,2000,c928,,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,pump_min_pwm,Pump Min PWM,,3c,2000,ca28,,s,IGN:1,,,,,s,UCH,,pct
+#r,boiler,pressure_monitoring_device,Pressure Monitoring Device,,3c,2000,c328,ign,s,IGN:1,,,,,s,UCH,0=temp_probe;1=pressure_switch;2=pressure_sensor
+#r,boiler,warning_pressure,Water Warning Pressure,,3c,2000,c12a,ign,s,IGN:1,,,,,s,UCH,10,bar
+#r,boiler,ignition_delay,Ignition Delay,,3c,2000,c027,ign,s,IGN:1,,,,,s,UCH,,min
+#r,boiler,pump_operation,Pump Operation,,3c,2000,c228,ign,s,IGN:1,,,,,s,UCH,0=low_speed;1=high_speed;2=modulating
+#r,boiler,heat_post_circulation,Heating Post Circulation,,3c,2000,c227,ign,s,IGN:1,,,,,s,UCH,,min
+#r,boiler,ignition_delay_type,Ignition Delay Type,,3c,2000,1320,ign,s,IGN:1,,,,,s,UCH,0=manual;1=automatic
+#r,boiler,nominal_power,Nominal Power,,3c,2000,6829,ign,s,IGN:1,,,,,s,UCH,,kW
+#r,boiler,boiler_type,Boiler Type,,3c,2000,c428,ign,s,IGN:1,,,,,s,UCH,0=mixed_instant;1=ext_tank_ntc;2=ext_tank_thermostat;3=micro_storage;4=stratification_storage;6=storage
+#r,boiler,hybrid_integration,Hybrid Integration,,3c,2000,0420,ign,s,IGN:1,,,,,s,onoff
+#r,boiler,fan_speed,Boiler Fan Speed,,3c,2000,4013,,s,IGN:1,,,,,,UIN,,rpm
 
 #Boiler Maintenance Schedule (expressed in number of months to next maintenance needed)
 #r,boiler,maintenance_months,Month to next maintenance,,3c,2001,c627,ign,s,IGN:1,,,,,s,UCH
-r,boiler,maintenance_months,Month to next maintenance,,3c,2001,c627,,s,UCH        
-w,boiler,maintenance_months,Month to next maintenance,,3c,2020,c627,,m,UCH
+#r,boiler,maintenance_months,Month to next maintenance,,3c,2001,c627,,s,UCH        
+#w,boiler,maintenance_months,Month to next maintenance,,3c,2020,c627,,m,UCH
 
 #Boiler Maintenance Requred Warning Enable/Disable (0=No Warning,1=Warning on scheduled maintenance)
-r,boiler,maintenance_warnings_enabled,Enable warning on next maintenance,,3c,2001,0e20,,s,onoff
-w,boiler,maintenance_warnings_enabled,Enable warning on next maintenance,,3c,2020,0e20,,m,onoff
+#r,boiler,maintenance_warnings_enabled,Enable warning on next maintenance,,3c,2001,0e20,,s,onoff
+#w,boiler,maintenance_warnings_enabled,Enable warning on next maintenance,,3c,2020,0e20,,m,onoff
 
 
 
@@ -347,12 +347,12 @@ r,energymgr,electric_cost,Hybrid system electric cost €c-kwh,,18,2000,652b,,s,
 w,energymgr,electric_cost,Hybrid system electric cost €c-kwh,,fe,2020,652b,,s,UIN,10,c€
 r,energymgr,pv_electric_cost,Hybrid system PV electric cost €c-kwh,,18,2000,662b,,s,IGN:1,,,,,,UIN,10,c€
 w,energymgr,pv_electric_cost,Hybrid system PV electric cost €c-kwh,,fe,2020,662b,,s,UIN,10,c€
-r,energymgr,ext_boiler_heat_efficiency,Hybrid external boiler heating eff,,18,2000,782d,,s,IGN:1,,,,,,UIN,10
-r,energymgr,ext_boiler_dhw_efficiency,Hybrid external boiler DHW eff,,18,2000,762e,,s,IGN:1,,,,,,UIN,10
+#r,energymgr,ext_boiler_heat_efficiency,Hybrid external boiler heating eff,,18,2000,782d,,s,IGN:1,,,,,,UIN,10
+#r,energymgr,ext_boiler_dhw_efficiency,Hybrid external boiler DHW eff,,18,2000,762e,,s,IGN:1,,,,,,UIN,10
 r,energymgr,heatpump_calculated_cost,Heatpump Current Calculated Cost,,18,2000,6c47,,s,IGN:1,,,,,,UIN,10,c€
-r,energymgr,boiler_calculated_cost,Boiler Current Calculated Cost,,18,2000,7147,,s,IGN:1,,,,,,UIN,10,c€
+#r,energymgr,boiler_calculated_cost,Boiler Current Calculated Cost,,18,2000,7147,,s,IGN:1,,,,,,UIN,10,c€
 r,energymgr,heatpump_estimated_cost,Heatpump Current Calculated Cost,,18,2000,6d47,,s,IGN:1,,,,,,UIN,10,c€
-r,energymgr,boiler_estimated_cost,Boiler Current Calculated Cost,,18,2000,7247,,s,IGN:1,,,,,,UIN,10,c€
+#r,energymgr,boiler_estimated_cost,Boiler Current Calculated Cost,,18,2000,7247,,s,IGN:1,,,,,,UIN,10,c€
 
 
 #Menu - Hybrid System Statistics
@@ -373,7 +373,7 @@ r,energymgr,heatpump_dhw_buffer_op_hours,Heatpump DHW Buffer Operating Hours,,18
 #Ext temp can be detected by multiple probes in the system (boiler, HP), it seems the system then compute the "better" one and cast it via 7647 command
 b,energymgr,ext_temp,External Temp,,fe,200f,7647,,,SIN,10,°C
 #Boiler Ext Temp, if present: 0x7fff(32767) is the default value if the probe is missing/broken, HP ext temp probe is in the HP section of the CEV (par 7810)
-b,boiler,ext_temp,External Temp,,fe,2010,7310,,,SIN,10,°C,32767=0
+#b,boiler,ext_temp,External Temp,,fe,2010,7310,,,SIN,10,°C,32767=0
 
 
 
