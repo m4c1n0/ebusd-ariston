@@ -80,7 +80,7 @@ services:
       # Use hex ADDR as own master bus address
       EBUSD_ADDRESS: "ff"
       # Actively answer to requests from other masters
-      EBUSD_ANSWER: "true"
+      #EBUSD_ANSWER: "true"
       # Stop bus acquisition after MSEC ms
       #EBUSD_ACQUIRETIMEOUT: 10
       # Retry bus acquisition COUNT times
@@ -97,7 +97,7 @@ services:
       # Daemon options:
 
       # Set default access level to LEVEL ("*" for everything)
-      #EBUSD_ACCESSLEVEL: "*"
+      EBUSD_ACCESSLEVEL: "*"
       # Read access control list from FILE
       #EBUSD_ACLFILE: "/path/to/aclfile"
       # Enable hex/inject/answer commands
