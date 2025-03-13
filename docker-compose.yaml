@@ -26,7 +26,7 @@ services:
     ports:
       - 8888:8888
       # when enabling the HTTP port, add it to the published ports as well:
-      #- 8080:8080
+      - 8080:8080
     #devices:
       # when using an USB device, make sure to hand it in to the container like this:
       #- /dev/ttyUSB0:/dev/ttyUSB0
