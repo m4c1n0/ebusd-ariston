@@ -57,7 +57,7 @@ services:
 
       # Read CSV config files from PATH (local folder or HTTPS URL)
       #EBUSD_CONFIGPATH: "/path/to/local/configs"
-      EBUSD_CONFIGPATH: "/etc/ebusd/"
+      EBUSD_CONFIGPATH: "/etc/ebusd/config/"
       # Pick CSV config files matching initial scan.
       # - empty for broadcast ident message (default when EBUSD_CONFIGPATH is not given),
       # - "none" for no initial scan message,
@@ -153,15 +153,15 @@ services:
       # MQTT options:
 
       # Connect to MQTT broker on HOST
-      #EBUSD_MQTTHOST: "localhost"
+      EBUSD_MQTTHOST: "mqtt.skb.hmcs.sk"
       # Connect to MQTT broker on PORT (usually 1883), 0 to disable
-      #EBUSD_MQTTPORT: 1883
+      EBUSD_MQTTPORT: 1883
       # Set client ID for connection to MQTT broker
-      #EBUSD_MQTTCLIENTID: "ebusd"
+      EBUSD_MQTTCLIENTID: "skb-ebus-daemon"
       # Connect as USER to MQTT broker (no default)
-      #EBUSD_MQTTUSER: "some-user"
+      EBUSD_MQTTUSER: "MCU"
       # Use PASSWORD when connecting to MQTT broker (no default)
-      #EBUSD_MQTTPASS: "some-password"
+      EBUSD_MQTTPASS: "yeQNinkjq2GdshrwzCsUh69BhEFAdmF"
       # Use MQTT TOPIC (prefix before /%circuit/%name or complete format)
       #EBUSD_MQTTTOPIC: "ebusd"
       # Use TOPIC for global data (default is "global/" suffix to mqtttopic prefix)
@@ -171,7 +171,7 @@ services:
       # Set the QoS value for all topics (0-2)
       #EBUSD_MQTTQOS: 0
       # Read MQTT integration settings from FILE (no default)
-      #EBUSD_MQTTINT: "/etc/ebusd/mqtt-hassio.cfg"
+      EBUSD_MQTTINT: "/etc/ebusd/config/mqtt-hassio.cfg"
       # Add variable(s) to the read MQTT integration settings (append to already existing value with "NAME+=VALUE")
       #EBUSD_MQTTVAR: "key[+]=value[,...]"
       # Publish in JSON format instead of strings, optionally in short (value directly below field key)
@@ -212,18 +212,3 @@ services:
     volumes:
        - /mnt/storage/docker/ebusd:/etc/ebusd/
 #============================================================
-
-
-    # when using the optional mqtt container below, add the dependency here:
-    #depends_on:
-    #  - mqtt
-
-
-#   optional container for having an MQTT broker inside the composition as well:
-#  mqtt:
-#    image: eclipse-mosquitto
-#    restart: unless-stopped
-#    ports:
-#      - 1883:1883
-#      - 9883:9883
-#
