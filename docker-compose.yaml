@@ -51,12 +51,13 @@ services:
       # Send an initial escape symbol after connecting device
       #EBUSD_INITSEND: ""
       # Extra transfer latency in ms
-      #EBUSD_LATENCY: 40
+      EBUSD_LATENCY: 100
 
       # Message configuration options:
 
       # Read CSV config files from PATH (local folder or HTTPS URL)
       #EBUSD_CONFIGPATH: "/path/to/local/configs"
+      EBUSD_CONFIGPATH: "https://ha.stp.hmcs.sk/local/ebusd/ariston.csv"
       # Pick CSV config files matching initial scan.
       # - empty for broadcast ident message (default when EBUSD_CONFIGPATH is not given),
       # - "none" for no initial scan message,
