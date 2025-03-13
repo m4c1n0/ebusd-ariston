@@ -1,9 +1,28 @@
+# COMPOSE VERSION
+#============================================================
+version: "3.6"
+#============================================================
+
+
+#NETWORKS
+#============================================================
+networks:
+  bridge-internal:
+    external: true
+    name: "bridge-internal"
+#============================================================
+
+
+#SERVICES
+#============================================================
 services:
   ebusd:
     # alternatively, use "john30/ebusd:devel" for the latest build of the current source code
     image: john30/ebusd
     container_name: ebusd
     restart: unless-stopped
+    networks:
+      - "bridge-internal"
     ports:
       - 8888:8888
       # when enabling the HTTP port, add it to the published ports as well:
@@ -189,10 +208,13 @@ services:
       #EBUSD_KNXINT: "/etc/ebusd/knx.cfg"
       # Add variable(s) to the read KNX integration settings
       #EBUSD_KNXVAR: "address=1.1.1"
+#============================================================
+
 
     # when using the optional mqtt container below, add the dependency here:
     #depends_on:
     #  - mqtt
+
 
 #   optional container for having an MQTT broker inside the composition as well:
 #  mqtt:
