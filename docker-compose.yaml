@@ -78,9 +78,9 @@ services:
       # eBUS options:
 
       # Use hex ADDR as own master bus address
-      #EBUSD_ADDRESS: "ff"
+      EBUSD_ADDRESS: "ff"
       # Actively answer to requests from other masters
-      #EBUSD_ANSWER: ""
+      EBUSD_ANSWER: "true"
       # Stop bus acquisition after MSEC ms
       #EBUSD_ACQUIRETIMEOUT: 10
       # Retry bus acquisition COUNT times
