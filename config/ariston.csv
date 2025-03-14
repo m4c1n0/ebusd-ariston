@@ -452,7 +452,9 @@ r,heatpump,heatpump_teo_temp,Heatpump Condenser Outlet Water Temp,,1e,2000,7417,
 r,heatpump,heatpump_mode,Heatpump Operating Mode,,18,2000,ca46,,s,IGN:1,,,,,,UCH,0=OFF;1=Stand_by;2=Cooling;3=Heating;4=Heating_boost;5=Cooling_boost;6=Heating_rating;7=Cooling_rating;8=Antifreeze;9=Defrost;10=Overtemp_prot;11=Timeguard;12=System_error;13=Reset_service;14=Coolant_recovery;15=Soft_fail,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 r,heatpump,heatpump_last_error,Heatpump Last Error - TBC,,18,2000,c54b,,s,IGN:1,,,,,,BCD
 r,heatpump,heatpump_safety_thermostat,Heatpump Safety Thermostat,,18,2000,1A11,,s,IGN:1,,,,,,BCD,0=open;1=closed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-r,heatpump,heatpump_flowmeter,Heatpump Flow Meter,,1e,2000,6e13,,s,IGN:1,,,,,,UIN,10,L
+#r,heatpump,heatpump_flowmeter,Heatpump Flow Meter,,1e,2000,6e13,,s,IGN:1,,,,,,UIN,10,L
+r,heatpump,heatpump_flowmeter,Heatpump Flow Meter,,1e,2000,6e13ca46cb46d84b,,s,IGN:1,,,,,,UIN,10,L
+
 r,heatpump,heatpump_flow_switch,Flow Switch State,,1e,2000,0c45,,s,IGN:1,,,,,,BCD,0=open;1=closed
 r,heatpump,heatpump_shutoff_protection,Heatpump Compressor Shutoff Protection,,1e,2000,1045,,s,IGN:1,,,,,s,onoff,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 r,heatpump,heatpump_evap_pressure,Heatpump Evapourator Pressure,,1e,2000,6c4f,,s,IGN:1,,,,,,UIN,10,bar
@@ -475,6 +477,8 @@ r,heatpump,heatpump_fan1_state,Heatpump Fan1 State,,1e,2000,1445,,s,onoff
 r,heatpump,heatpump_fan2_state,Heatpump Fan2 State,,1e,2000,1545,,s,onoff
 r,heatpump,heatpump_4way_valve_state,Heatpump 4Way Valve State,,1e,2000,1345,,s,BCD,0=heating;1=cooling
 r,heatpump,heatpump_base_pane_heater_state,Heatpump Base Pane Heater State,,1e,2000,1645,,s,onoff
+
+
 
 #Menu - EM Diagnostics - 1 Input Menu
 r,energymgr,hybrid_status,Hybrid Status,,18,2000,c94b,,s,IGN:1,,,,,,UCH,0=Stand-By;1=Antifreeze Cycle;2=Heating Cycle;3=DHW Cycle;4=Thermal Cleanse Function;5=Air Purge function;6=Chimney Clean Function;7=Floor Drying Cycle;8=No Heat Generation;9=Manual Mode;10=Error/Manual Mode;11=Initialization;12=Off;14=Cooling Cycle;15=DHW Antifreeze Cycle;16=Photovoltaic Integration;17=Dehumidification;18=Pump Down;19=Buffer Heating and DHW;20=Buffer Cooling and DHW
@@ -507,9 +511,10 @@ r,heatpump,heatpump_power_consumption,Heatpump Power Consumption,,1e,2000,7c4f,,
 #Broadcasted messages and grab of transmitted messages.
 
 #Message not sent anymore (FW update??)
-r,heatpump,compressor_info,Heatpump Compressor Data,7f,1e,2000,cb4673177217,,s,IGN:1,,,,compressor_frequency,s,UCH,,Hz,,compressor_suction_temp,s,SIN,10,°C,,compressor_discharge_temp,s,SIN,10,°C
-r,heatpump,compressor_info2,Heatpump Compressor Data2,13,1e,2000,72177317ca466247,,s,IGN:1,,,,compressor_suction_temp,s,SIN,10,°C,,compressor_discharge_temp,s,SIN,10,°C
+#r,heatpump,compressor_info,Heatpump Compressor Data,7f,1e,2000,cb4673177217,,s,IGN:1,,,,compressor_frequency,s,UCH,,Hz,,compressor_suction_temp,s,SIN,10,°C,,compressor_discharge_temp,s,SIN,10,°C
+#r,heatpump,compressor_info2,Heatpump Compressor Data2,13,1e,2000,72177317ca466247,,s,IGN:1,,,,compressor_suction_temp,s,SIN,10,°C,,compressor_discharge_temp,s,SIN,10,°C
 #r,heatpump,compressor_info,Heatpump Compressor Data,13,1e,2000,6e13cb46d84b,,s,IGN:1,,,,flow_meter,s,UIN,10,L,,compressor_frequency,s,UCH,,,,Param_684b,s,UCH,1,X
+    
 
 r,heatpump,water_flow_info,Heatpump Water Flow Data,13,1e,2000,7610771079106e13,,s,IGN:1,,,,LWT_temp,s,SIN,10,°C,,EWT_temp,s,SIN,10,°C,,evaporator_temp,s,SIN,10,°C,,flow_meter,s,UIN,10,L
 g,heatpump,coolat_data,Heatpump Coolant Data,13,1e,2000,7610771079107117,,s,IGN:1,,,,LWT_temp,s,SIN,10,°C,,EWT_temp,s,SIN,10,°C,,evaporator_temp,s,SIN,10,°C,,coolant_temp,s,SIN,10,°C
