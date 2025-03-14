@@ -124,8 +124,7 @@ services:
       EBUSD_LOGFILE: "/etc/ebusd/log/ebusd.log"
       # Only write log for matching AREA(S) up to LEVEL (alternative to EBUSD_LOGAREAS/EBUSD_LOGLEVEL, may be used
       # multiple times)
-      #EBUSD_LOG: "all:notice"
-      EBUSD_LOG: ""
+      EBUSD_LOG: "all:debug"
       # Only write log for matching AREA(S): main|network|bus|device|update|other|all
       EBUSD_LOGAREAS: "all"
       # Only write log up to LEVEL: error|notice|info|debug
@@ -149,7 +148,7 @@ services:
       # Make dump file no larger than SIZE kB
       EBUSD_DUMPSIZE: 1024
       # Flush each byte
-      #EBUSD_DUMPFLUSH: ""
+      EBUSD_DUMPFLUSH: ""
 
       # MQTT options:
 
