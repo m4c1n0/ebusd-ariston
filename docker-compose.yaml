@@ -102,7 +102,7 @@ services:
       # Read access control list from FILE
       #EBUSD_ACLFILE: "/path/to/aclfile"
       # Enable hex/inject/answer commands
-      #EBUSD_ENABLEHEX: ""
+      EBUSD_ENABLEHEX: ""
       # Enable define command
       #EBUSD_ENABLEDEFINE: ""
       # PID file name (only for daemon)
