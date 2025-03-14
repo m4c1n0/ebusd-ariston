@@ -57,7 +57,7 @@ services:
 
       # Read CSV config files from PATH (local folder or HTTPS URL)
       #EBUSD_CONFIGPATH: "/path/to/local/configs"
-      EBUSD_CONFIGPATH: "/etc/ebusd/" #config/" - commented out 
+      EBUSD_CONFIGPATH: "/etc/ebusd/config/"
       # Pick CSV config files matching initial scan.
       # - empty for broadcast ident message (default when EBUSD_CONFIGPATH is not given),
       # - "none" for no initial scan message,
