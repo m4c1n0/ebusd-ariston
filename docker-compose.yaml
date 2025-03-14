@@ -144,7 +144,7 @@ services:
       # Enable binary dump of received bytes
       EBUSD_DUMP: ""
       # Dump received bytes to FILE
-      EBUSD_DUMPFILE: "/etc/ebusd/log/ebusd_raw.log"
+      EBUSD_DUMPFILE: "/etc/ebusd/log/ebusd_dump.log"
       # Make dump file no larger than SIZE kB
       EBUSD_DUMPSIZE: 1024
       # Flush each byte
