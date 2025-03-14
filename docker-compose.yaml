@@ -64,13 +64,13 @@ services:
       # - "full" for full scan,
       # - a single hex address to scan, or
       # - "off" for not picking CSV files by scan result (default when EBUSD_CONFIGPATH is given).
-      EBUSD_SCANCONFIG: ""
+      EBUSD_SCANCONFIG: "full"
       # Retry scanning devices COUNT times
-      #EBUSD_SCANRETRIES: 5
+      EBUSD_SCANRETRIES: 5
       # Prefer LANG in multilingual configuration files
       #EBUSD_CONFIGLANG: "en"
       # Poll for data every SEC seconds (0=disable)
-      #EBUSD_POLLINTERVAL: 10
+      EBUSD_POLLINTERVAL: 10
       # Use CA FILE for checking certificates (uses defaults, "#" for insecure)
       #EBUSD_CAFILE: "/path/to/cafile"
       # Use CA PATH for checking certificates (uses defaults)
@@ -121,7 +121,7 @@ services:
       # Log options:
 
       # Write log to FILE (only for daemon, empty string for using syslog)
-      EBUSD_LOGFILE: "/var/log/ebusd.log"
+      EBUSD_LOGFILE: "/etc/ebusd/log/ebusd.log"
       # Only write log for matching AREA(S) up to LEVEL (alternative to EBUSD_LOGAREAS/EBUSD_LOGLEVEL, may be used
       # multiple times)
       EBUSD_LOG: "all:notice"
@@ -135,25 +135,25 @@ services:
       # Log messages or all received/sent bytes on the bus
       EBUSD_LOGRAWDATA: ""
       # Write raw log to FILE
-      EBUSD_LOGRAWDATAFILE: "/var/log/ebusd.log"
+      EBUSD_LOGRAWDATAFILE: "/etc/ebusd/log/ebusd_raw.log"
       # Make raw log file no larger than SIZE kB
       EBUSD_LOGRAWDATASIZE: 1024
 
       # Binary dump options:
 
       # Enable binary dump of received bytes
-      #EBUSD_DUMP: ""
+      EBUSD_DUMP: ""
       # Dump received bytes to FILE
-      #EBUSD_DUMPFILE: "/tmp/ebusd_dump.bin"
+      EBUSD_DUMPFILE: "/etc/ebusd/log/ebusd_raw.log"
       # Make dump file no larger than SIZE kB
-      #EBUSD_DUMPSIZE: 100
+      EBUSD_DUMPSIZE: 1024
       # Flush each byte
       #EBUSD_DUMPFLUSH: ""
 
       # MQTT options:
 
       # Connect to MQTT broker on HOST
-      EBUSD_MQTTHOST: "mqtt.stp.hmcs.sk"
+      EBUSD_MQTTHOST: "mqtt.skb.hmcs.sk"
       # Connect to MQTT broker on PORT (usually 1883), 0 to disable
       EBUSD_MQTTPORT: 1883
       # Set client ID for connection to MQTT broker
@@ -163,13 +163,13 @@ services:
       # Use PASSWORD when connecting to MQTT broker (no default)
       EBUSD_MQTTPASS: "yeQNinkjq2GdshrwzCsUh69BhEFAdmF"
       # Use MQTT TOPIC (prefix before /%circuit/%name or complete format)
-      #EBUSD_MQTTTOPIC: "ebusd"
+      EBUSD_MQTTTOPIC: "ebusd"
       # Use TOPIC for global data (default is "global/" suffix to mqtttopic prefix)
-      #EBUSD_MQTTGLOBAL: "ebusd/global/"
+      EBUSD_MQTTGLOBAL: "ebusd/global/"
       # Retain all topics instead of only selected global ones
-      #EBUSD_MQTTRETAIN: ""
+      EBUSD_MQTTRETAIN: ""
       # Set the QoS value for all topics (0-2)
-      #EBUSD_MQTTQOS: 0
+      EBUSD_MQTTQOS: 0
       # Read MQTT integration settings from FILE (no default)
       EBUSD_MQTTINT: "/etc/ebusd/config/mqtt-hassio.cfg"
       # Add variable(s) to the read MQTT integration settings (append to already existing value with "NAME+=VALUE")
